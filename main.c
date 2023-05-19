@@ -5,6 +5,7 @@
 #include "file_operations.h"
 
 int main() {
-    open_file();
+    open_file_creat();
+    open_file_trunc();
     return 0;
 }
