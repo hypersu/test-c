@@ -7,5 +7,6 @@
 int main() {
     open_file_creat();
     open_file_trunc();
+    open_file_excel();
     return 0;
 }

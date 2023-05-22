@@ -7,6 +7,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <string.h>
+#include <errno.h>
 #include "file_operations.h"
 
 void open_file_creat() {
@@ -77,4 +78,29 @@ void open_file_trunc() {
     // 关闭文件描述符
     close(fd);
 
+}
+
+void open_file_excel() {
+    // 分配内存
+    char *p = (char *) malloc(BUFF_SIZE);
+
+    // 置空
+    memset(p, 0, BUFF_SIZE);
+
+    // 打开文件
+    int fd = open("C:\\Users\\suxiaohan\\Desktop\\test_excel.txt", O_RDWR | O_CREAT | O_EXCL, S_IRWXU);
+
+    printf("错误码：%d", errno);
+
+    strcpy(p, "123456");
+
+    // 写入文件
+    write(fd, p, strlen(p));
+
+    memset(p, 0, strlen(p));
+
+    // 读取文件
+    read(fd, p, BUFF_SIZE);
+
+    printf("文件内容：%s", p);
 }
