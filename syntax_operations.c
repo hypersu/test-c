@@ -5,7 +5,7 @@
 #include "syntax_operations.h"
 
 int func() {
-    printf("111111111111");
+    printf("111111111111\n");
     return 0;
 }
 

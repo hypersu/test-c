@@ -14,9 +14,10 @@ int main() {
     open_file_excel();*/
 
     // 线程操作
+    create_thread();
 
-    // 基础测试
-    convert_func_pointer();
+    /*// 基础测试
+    convert_func_pointer();*/
 
     return 0;
 }
